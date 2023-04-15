@@ -1,0 +1,165 @@
+<html>
+<head>
+<title>Test Page</title>
+
+</head>
+
+<body style="background-color:rgb(206, 183, 216);"></body>
+
+<center><h1>Quiz Questions</h1></center>
+
+<p>
+
+<form name="quiz">
+
+<p>
+
+<b>Question 1.
+
+<br>1. Do you think women have the right to give abortion?<br></b>
+
+<blockquote>
+
+<input type="radio" name="q1" value="Yes">Yes<br>
+
+<input type="radio" name="q1" value="No">No<br>
+
+<input type="radio" name="q1" value="I have no clue">I have no clue<br>
+
+</blockquote>
+
+<p><b>
+
+<hr>
+
+Question 2.
+
+<br>Do you think women can choose their career to be a housewife or work out of home?<br></b>
+
+<blockquote>
+
+<input type = "radio" name = "q2" value = "Yes">Yes<br>
+
+<input type="radio" name="q2" value="No">No<br>
+
+<input type="radio" name="q2" value="I have no clue">I have no clue<br>
+
+</blockquote>
+
+<p><b>
+
+
+Question 3.
+
+<br>Do you think women have the right to wear whatever they want regardless of potential unsafe situations?<br></b>
+    
+<blockquote>
+    
+<input type = "radio" name = "q3" value = "Yes">Yes<br>
+    
+<input type="radio" name="q3" value="No">No<br>
+    
+<input type="radio" name="q3" value="I have no clue">I have no clue<br>
+    
+</blockquote>
+    
+<p><b>
+
+<hr>
+
+Question 4.
+
+<br>Do you think women should have subsidies and welfare while they are bringing up their children?<br></b>
+
+<blockquote>
+
+<input type="radio" name="q4" value="Yes">Yes<br>
+
+<input type="radio" name="q4" value="No">No<br>
+
+<input type="radio" name="q4" value="I have no clue">I have no clue<br>
+
+</blockquote>
+
+<p><b>
+
+<hr>
+
+
+<p><b>
+
+<input type="button"value="Grade me"onClick="getScore(this.form);">
+
+<input type="reset" value="Clear"><p>
+
+Number of score out of 5 = <input type= text size 5 name= "mark">
+
+Score in percentage = <input type=text size=5 name="percentage"><br>
+
+</form>
+
+<p>
+
+<form method="post" name="Form" onsubmit="" action="">
+
+</form>
+
+</body>
+
+<script>
+
+var numQues = 4;
+var numChoi = 3;
+var answers = new Array(4);
+
+answers[0] = "Yes";
+answers[1] = "Yes";
+answers[2] = "Yes";
+answers[3] = "Yes";
+
+
+function getScore(form) {
+var score = 0;
+var currElt;
+var currSelection;
+
+for (i=0; i<numQues; i++) {
+currElt = i*numChoi;
+answered=false;
+for (j=0; j<numChoi; j++) {
+currSelection = form.elements[currElt + j];
+
+if (currSelection.checked) {
+
+answered=true;
+
+if (currSelection.value == answers[i]) {
+
+score++;
+
+break;
+
+}
+
+}
+
+}
+
+if (answered ===false){alert("Do answer all the questions, Please") ;return false;}
+
+}
+
+var scoreper = Math.round(score/numQues*100);
+
+form.percentage.value = scoreper + "%";
+
+form.mark.value=score;
+
+}
+
+</script>
+
+<p>Code Source:<cite><a href="https://www.quora.com/Can-we-develop-a-quiz-website-using-HTML-alone"></a> Can we develop a quiz website using HTML alone?</cite>by Kumar Uday Udi</p>
+<a href="file:///Users/xiongyiming/Downloads/website/hack.html">back to the front page</a>
+
+</html>
